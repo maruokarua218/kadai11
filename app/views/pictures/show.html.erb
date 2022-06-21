@@ -1,13 +1,13 @@
 <p id="notice"><%= notice %></p>
 
 <p>
-  <strong>Image:</strong>
-  <%= image_tag @picture.image.url %>
+  <strong>Content:</strong>
+  <%= @picture.content %>
 </p>
 
 <p>
-  <strong>Content:</strong>
-  <%= @picture.content %>
+  <strong>Image:</strong>
+  <%= image_tag @picture.image.url if blog.image.present? %>
 </p>
 
 <%= link_to 'Edit', edit_picture_path(@picture) %> |

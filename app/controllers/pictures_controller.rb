@@ -42,21 +42,25 @@ class PicturesController < ApplicationController
 
   def destroy
     @picture.destroy
-
     respond_to do |format|
       format.html { redirect_to pictures_url, notice: "Picture was successfully destroyed." }
       format.json { head :no_content }
     end
   end
 
+  def confirm
+    @picture = current_user.pictures.build(picture_params)
+    render :new if @picture.invalid?
+  end
+
   private
 
-    def set_picture
-      @picture = Picture.find(params[:id])
-    end
+  def set_picture
+    @picture = Picture.find(params[:id])
+  end
 
-    def picture_params
-      params.require(:picture).permit(:image, :image_cache)
-    end
 
+  def picture_params
+    params.require(:picture).permit(:image, :image_cache, :content)
+  end
 end
