@@ -1,0 +1,41 @@
+html{
+  font-size: 62.5%;
+  height: 100%;
+}
+
+body{
+  height: 100%;
+}
+
+.container{
+  position: relative;
+  width: 1920px;
+  margin: 0 auto;
+  min-height: 100%;
+}
+/* header */
+header{
+  background-color: #993399;
+  color: white;
+  height: 50px;
+}
+
+.header{
+  display: flex;
+}
+
+/*content*/
+
+/*footer*/
+footer{
+  position: absolute;
+  bottom: 0;
+  background-color:#993399;
+  width: 1920px;
+  height: 70px;
+}
+
+footer p{
+  color: white;
+
+}
