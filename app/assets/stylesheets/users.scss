@@ -1,3 +1,51 @@
 // Place all the styles related to the users controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: https://sass-lang.com/
+
+.user_settings {
+  margin: 0 auto;
+  width: 600px;
+  height: 100%;
+  background-color: white;
+
+  h1 {
+    margin: 0 auto;
+    padding: 40px 0 30px 0;
+    font-size: 20px;
+    text-align: center;
+    font-weight: bold;
+  }
+  .user_settings_form {
+    h2 {
+      margin: 30px 20px 0 10px;
+      font-size: 15px;
+    }
+    .profile_image {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 10px auto;
+      width: 200px;
+      height: 200px;
+      img {
+        width: auto;
+        height: auto;
+        max-width: 100%;
+        max-height: 100%;
+      }
+    }
+    .input {
+      display: block;
+      margin: 10px 20px 0 auto;
+      width: 500px;
+    }
+    .comment {
+      height: 100px;
+      background-color: #f8f8f8;
+    }
+    button {
+      display: block;
+      margin: 10px 20px 10px auto;
+    }
+  }
+}

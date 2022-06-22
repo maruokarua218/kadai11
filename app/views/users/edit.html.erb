@@ -1,0 +1,14 @@
+<div class="user_settings">
+  <h1>ユーザー設定</h1>
+  <div class="user_settings_form">
+    <%= form_with(model: @user, url: user_path, local: true) do |f| %>
+      <div class="profile_image">
+      <%= f.label :プロフィール画像 %>
+      <%= image_tag(@user.image.url) if @user.image && @user.image.url %>
+      <%= f.file_field :image, class: 'form-control' %>
+      <%= f.hidden_field :image_cache %>
+      </div>
+    <%= f.submit "編集する", class: 'btn btn-dark btn-sm' %>
+    <% end %>
+  </div>
+</div>
