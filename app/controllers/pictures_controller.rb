@@ -46,11 +46,15 @@ class PicturesController < ApplicationController
   end
 
   def destroy
-
-    @picture.destroy
-    respond_to do |format|
-      format.html { redirect_to pictures_url, notice: "Picture was successfully destroyed." }
-      format.json { head :no_content }
+    if current_user.id != Picture.find(params[:id]).user.id
+      flash[:notice]="権限がありません"
+      redirect_to pictures_path
+    else
+      @picture.destroy
+      respond_to do |format|
+        format.html { redirect_to pictures_url, notice: "Picture was successfully destroyed." }
+        format.json { head :no_content }
+      end
     end
   end
 
