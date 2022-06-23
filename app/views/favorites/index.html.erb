@@ -1,0 +1,23 @@
+<h1>いいねした投稿</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>name</th>
+      <th>Content</th>
+      <th>Image</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @favorite_pictures.each do |favorite| %>
+      <tr>
+        <td><%= favorite.user.name %></td>
+        <td><%= favorite.picture.content %></td>
+        <td><%= image_tag favorite.picture.image.url %></td>
+        <td><%= link_to 'Show', favorite.picture %></td>
+        <% end %>
+      </tr>
+  </tbody>
+</table>
