@@ -13,6 +13,10 @@ class PicturesController < ApplicationController
   end
 
   def edit
+    if current_user.id != Picture.find(params[:id]).user.id
+      flash[:notice]="権限がありません"
+      redirect_to pictures_path
+    end
   end
 
   def create
@@ -42,6 +46,7 @@ class PicturesController < ApplicationController
   end
 
   def destroy
+
     @picture.destroy
     respond_to do |format|
       format.html { redirect_to pictures_url, notice: "Picture was successfully destroyed." }

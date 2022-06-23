@@ -18,7 +18,7 @@
     <% end %>
 
   <header>
-   <p>みんなの投稿</p>
+   <p>Everyone’s post</p>
   </header>
 
     <% flash.each do |key, value| %>
@@ -36,14 +36,14 @@
     <%= yield %>
 
     <footer>
-     <p>~なんでも投稿してね~</p>
+     <p>~post anything~</p>
     </footer>
 
     <script>
       window.setTimeout(() => {
         $(".flash_message").slideUp();
       }, 3000);
-    </script>    
+    </script>
 
   </body>
 </html>

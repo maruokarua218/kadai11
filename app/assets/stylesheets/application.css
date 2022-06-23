@@ -41,9 +41,10 @@ header{
  }
 
 header p{
-  font-size: 20px;
+  font-size: 30px;
   text-align:center;
   padding:40px 0;
+  font-family: 'Amiri', serif;
 }
 
  table {
@@ -70,4 +71,5 @@ footer p{
   color: white;
   width: 100%;
   padding: 10px 0;
+  font-family: 'Amiri', serif;
 }

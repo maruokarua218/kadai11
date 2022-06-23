@@ -6,6 +6,10 @@
     <%= image_tag 'onigiri.png', size: '100x100' %>
 <% end %>
 
+<% if @user.id==current_user.id %>
+    <% link_to("編集", "users/#{@user.id}/edit") %>
+<% end %>
+
 <p>メールアドレス: <%= @user.email %></p>
 <%= link_to "投稿一覧画面を確認する", pictures_path %>
 <%= link_to "プロフィール画像を編集する", edit_user_path(@user) %>
