@@ -6,8 +6,8 @@
     <%= image_tag 'onigiri.png', size: '100x100' %>
 <% end %>
 
-<% if @user.id==current_user.id %>
-    <% link_to("編集", "users/#{@user.id}/edit") %>
+<% if @user == current_user %>
+    <%= link_to 'プロフィール編集', edit_user_path(@user) %>
 <% end %>
 
 <p>メールアドレス: <%= @user.email %></p>
