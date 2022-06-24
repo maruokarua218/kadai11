@@ -11,19 +11,9 @@
 
   <body>
 
-    <% if flash.now.present? %>
-      <% flash.each do |type, message| %>
-        <p class="flash_message flash_message_<%= type %>"><%= message.html_safe %></p>
-      <% end %>
-    <% end %>
-
   <header>
    <p>Everyone’s post</p>
   </header>
-
-    <% flash.each do |key, value| %>
-      <%= content_tag(:div, value, class: "#{key}") %>
-    <% end %>
 
     <% if logged_in? %>
       <%= link_to "Profile", user_path(current_user.id) %>
